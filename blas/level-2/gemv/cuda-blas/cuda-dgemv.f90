@@ -5,7 +5,7 @@
 !! National Center for Supercomputing Applications (NCSA)
 !!  
 !! Creation Date: Friday, 17th September 2021, 11:24:19 am
-!! Last Modified: Friday, 17th September 2021, 11:31:19 am
+!! Last Modified: Friday, 17th September 2021, 11:35:51 am
 !!  
 !! Copyright (c) 2021, Bruno R. de Abreu, National Center for Supercomputing Applications.
 !! All rights reserved.
@@ -75,7 +75,7 @@ module mycublas
       ! Inside this region the device data pointer will be used
       !$acc host_data use_device(A, x, y)
           stream = acc_get_cuda_stream(acc_async_sync)
-          do = 1, nloops
+          do I = 1, nloops
             call launchCUDGEMV(M,P,ALPHA,        &
                              C_LOC(A),M,       &
                              C_LOC(x),1,BETA,  &
